@@ -15,6 +15,7 @@ public class Movement_Player : MonoBehaviour
     #region Private Values
     private Vector2 movement;
     private bool TurnLeft;
+    
 
     #endregion
 
@@ -57,5 +58,6 @@ public class Movement_Player : MonoBehaviour
         {
             SpriteRenderer.flipX = false;
         }
+        
     }
 }
