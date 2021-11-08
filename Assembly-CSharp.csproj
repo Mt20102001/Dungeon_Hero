@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/Movement_Player.cs" />
+     <Compile Include="Assets/Scripts/Combat_Player.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/home/minhtuan/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -255,6 +256,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>/home/minhtuan/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+        <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.cinemachine@2.8.2/Runtime/ThirdParty/clipper_library.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/home/minhtuan/Unity/Hub/Editor/2020.3.20f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -700,6 +704,14 @@
     <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
       <Project>{5f31390e-0499-1255-cb1d-aa1942bcc026}</Project>
       <Name>Unity.2D.IK.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{a300f886-03da-20ee-463b-cdf6e8afe191}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{31815139-23dd-bf6b-567b-845a86ad2853}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.Animation.Triangle.Runtime.csproj">
       <Project>{0eb8bbd6-3ff2-b9ec-2243-243546d5072e}</Project>
