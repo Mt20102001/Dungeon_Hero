@@ -322,11 +322,11 @@
     <Reference Include="log4netPlastic">
         <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/log4netPlastic.dll</HintPath>
     </Reference>
-    <Reference Include="unityplastic">
-        <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
-    </Reference>
     <Reference Include="clipper_library">
         <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.cinemachine@2.8.2/Runtime/ThirdParty/clipper_library.dll</HintPath>
+    </Reference>
+    <Reference Include="unityplastic">
+        <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.collab-proxy@1.11.2/Lib/Editor/PlasticSCM/unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>/home/minhtuan/Documents/UnityProject/Dungeons Hero/Library/PackageCache/com.unity.ext.nunit@1.0.6/net35/unity-custom/nunit.framework.dll</HintPath>
