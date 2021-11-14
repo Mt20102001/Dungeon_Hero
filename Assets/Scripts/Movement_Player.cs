@@ -19,6 +19,10 @@ public class Movement_Player : MonoBehaviour
 
     #endregion
 
+    private void Start() {
+        animator = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -37,6 +41,40 @@ public class Movement_Player : MonoBehaviour
     {
         // Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        #region Direction
+        if (movement.x != 0 || movement.y != 0)
+        {
+            // Last movement X
+            if (movement.x > 0)
+            {
+                animator.SetFloat("XPlayer", 1f);
+            }
+            else if (movement.x < 0)
+            {
+                animator.SetFloat("XPlayer", -1f);
+            }
+            else
+            {
+                animator.SetFloat("XPlayer", 0f);
+            }
+
+            // Last movement Y
+            if (movement.y > 0)
+            {
+                animator.SetFloat("YPlayer", 1f);
+            }
+            else if (movement.y < 0)
+            {
+                animator.SetFloat("YPlayer", -1f);
+            }
+            else
+            {
+                animator.SetFloat("YPlayer", 0f);
+            }
+        }
+        #endregion
+        
     }
 
     private void TurnPlayer()
