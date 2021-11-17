@@ -9,72 +9,82 @@ public class Movement_Player : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer SpriteRenderer;
+    public GameObject gameObject;
 
     #endregion
 
     #region Private Values
     private Vector2 movement;
     private bool TurnLeft;
-    
+    private bool PlayerCanMove;
+
 
     #endregion
 
-    private void Start() {
+    private void Start()
+    {
         animator = GetComponent<Animator>();
+        PlayerCanMove = gameObject.GetComponent<Combat_Player>().CanMove;
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Input
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        TurnPlayer();
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        
+        if (PlayerCanMove)
+        {
+            TurnPlayer();
+            animator.SetFloat("Horizontal", movement.x);
+            animator.SetFloat("Vertical", movement.y);
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
+
     }
 
     private void FixedUpdate()
     {
-        // Movement
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        #region Direction
-        if (movement.x != 0 || movement.y != 0)
+        if (PlayerCanMove)
         {
-            // Last movement X
-            if (movement.x > 0)
-            {
-                animator.SetFloat("XPlayer", 1f);
-            }
-            else if (movement.x < 0)
-            {
-                animator.SetFloat("XPlayer", -1f);
-            }
-            else
-            {
-                animator.SetFloat("XPlayer", 0f);
-            }
+            // Movement
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-            // Last movement Y
-            if (movement.y > 0)
+            // Direction
+            #region Direction
+            if (movement.x != 0 || movement.y != 0)
             {
-                animator.SetFloat("YPlayer", 1f);
+                // Last movement X
+                if (movement.x > 0)
+                {
+                    animator.SetFloat("XPlayer", 1f);
+                }
+                else if (movement.x < 0)
+                {
+                    animator.SetFloat("XPlayer", -1f);
+                }
+                else
+                {
+                    animator.SetFloat("XPlayer", 0f);
+                }
+
+                // Last movement Y
+                if (movement.y > 0)
+                {
+                    animator.SetFloat("YPlayer", 1f);
+                }
+                else if (movement.y < 0)
+                {
+                    animator.SetFloat("YPlayer", -1f);
+                }
+                else
+                {
+                    animator.SetFloat("YPlayer", 0f);
+                }
             }
-            else if (movement.y < 0)
-            {
-                animator.SetFloat("YPlayer", -1f);
-            }
-            else
-            {
-                animator.SetFloat("YPlayer", 0f);
-            }
+            #endregion
         }
-        #endregion
-        
     }
 
     private void TurnPlayer()
@@ -96,6 +106,6 @@ public class Movement_Player : MonoBehaviour
         {
             SpriteRenderer.flipX = false;
         }
-        
+
     }
 }

@@ -1598,9 +1598,11 @@ GameObject:
   - component: {fileID: 1512073153}
   - component: {fileID: 1512073152}
   - component: {fileID: 1512073156}
-  - component: {fileID: 1512073155}
   - component: {fileID: 1512073151}
   - component: {fileID: 1512073150}
+  - component: {fileID: 1512073157}
+  - component: {fileID: 1512073155}
+  - component: {fileID: 1512073158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1621,9 +1623,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004993126, y: 0.65546477}
+  m_Offset: {x: 0.04000002, y: 0.7176233}
   serializedVersion: 2
-  m_Radius: 0.22533478
+  m_Radius: 0.20379525
 --- !u!70 &1512073151
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1637,8 +1639,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0017154515, y: 0.24573189}
-  m_Size: {x: 0.2998876, y: 0.41133523}
+  m_Offset: {x: 0.03999999, y: 0.32720464}
+  m_Size: {x: 0.2998876, y: 0.37608874}
   m_Direction: 0
 --- !u!95 &1512073152
 Animator:
@@ -1740,6 +1742,7 @@ MonoBehaviour:
   rb: {fileID: 1512073156}
   animator: {fileID: 1512073152}
   SpriteRenderer: {fileID: 1512073153}
+  gameObject: {fileID: 1512073149}
 --- !u!50 &1512073156
 Rigidbody2D:
   serializedVersion: 4
@@ -1761,6 +1764,61 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!68 &1512073157
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512073149}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0.66162837, y: 0.008938298}
+  - {x: 0.7245085, y: 0.105438046}
+  - {x: 0.78383666, y: 0.22300586}
+  - {x: 0.7774897, y: 0.5939428}
+  - {x: 0.6593835, y: 0.8580365}
+  - {x: 0.5196399, y: 1.0417429}
+  - {x: 0.19820827, y: 1.1728442}
+  - {x: -0.20988742, y: 1.1687602}
+  - {x: -0.42108867, y: 1.0788504}
+  - {x: -0.6566988, y: 0.8851671}
+  - {x: -0.7559938, y: 0.6294988}
+  - {x: -0.7677897, y: 0.42110208}
+  - {x: -0.6594069, y: 0.26370406}
+  - {x: -0.40399778, y: 0.28646266}
+  - {x: -0.2401292, y: 0.68800014}
+  - {x: 0.02772367, y: 0.77075416}
+  - {x: 0.33382684, y: 0.69694674}
+  - {x: 0.4486932, y: 0.63844603}
+  - {x: 0.6347554, y: 0.4833156}
+  - {x: 0.6626171, y: 0.25421515}
+  - {x: 0.65205216, y: 0.016081728}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!114 &1512073158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512073149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e4f0273548b75268e36e14d3980505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1512073152}
+  CanMove: 0
 --- !u!1 &1688161789
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3701,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.94926, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
