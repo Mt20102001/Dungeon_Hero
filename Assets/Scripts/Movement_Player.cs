@@ -9,14 +9,13 @@ public class Movement_Player : MonoBehaviour
     public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer SpriteRenderer;
-    public GameObject gameObject;
 
     #endregion
 
     #region Private Values
     private Vector2 movement;
     private bool TurnLeft;
-    private bool PlayerCanMove;
+    public bool CanMove;
 
 
     #endregion
@@ -24,7 +23,7 @@ public class Movement_Player : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        PlayerCanMove = gameObject.GetComponent<Combat_Player>().CanMove;
+        CanMove = true;
     }
 
     // Update is called once per frame
@@ -34,7 +33,7 @@ public class Movement_Player : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (PlayerCanMove)
+        if (CanMove)
         {
             TurnPlayer();
             animator.SetFloat("Horizontal", movement.x);
@@ -42,11 +41,21 @@ public class Movement_Player : MonoBehaviour
             animator.SetFloat("Speed", movement.sqrMagnitude);
         }
 
+        // Stop moving until animations attack done
+        if (!this.animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
+            CanMove = true;
+        }
+        else
+        {
+            CanMove = false;
+        }
+
     }
 
     private void FixedUpdate()
     {
-        if (PlayerCanMove)
+        if (CanMove)
         {
             // Movement
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
@@ -84,6 +93,7 @@ public class Movement_Player : MonoBehaviour
                 }
             }
             #endregion
+
         }
     }
 

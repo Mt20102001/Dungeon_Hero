@@ -6,7 +6,8 @@ public class Combat_Player : MonoBehaviour
 {
     #region Public Value
     public Animator animator;
-    public bool CanMove;
+    
+
     #endregion
 
     #region Private Value
@@ -17,23 +18,14 @@ public class Combat_Player : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        CanMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            animator.SetBool("StopAttack", true);
             animator.SetTrigger("Attack");
-            CanMove = false;
-        }
-
-    }
-
-    private void FixedUpdate()
-    {
-
+        }  
     }
 }
